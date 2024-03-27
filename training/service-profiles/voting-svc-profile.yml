@@ -5,7 +5,7 @@ metadata:
   namespace: emojivoto
 spec:
   retryBudget:
-    retryRatio: 0.001
+    retryRatio: 0.5
     minRetriesPerSecond: 10
     ttl: 10s
   routes:
@@ -513,4 +513,5 @@ spec:
       method: POST
       pathRegex: /emojivoto\.v1\.VotingService/Results
     name: Results
+    timeout: 5000ms
     isRetryable: true
